@@ -1,10 +1,11 @@
 var mongoose = require("mongoose");
-var Scheme = mongoose.Schema;
+var Schema = mongoose.Schema;
 
 var pokemon = new Schema({
+  
+  dexId: Number,
   image: { type: String, required: true },
   name: String,
-  dexNum: Number,
   type1: String,
   type2: { type: String, required: false },
   location: String,
@@ -28,3 +29,7 @@ var pokemon = new Schema({
   ninthTask: { type: String, required: false },
   ninthNum: { type: Number, required: false },
 });
+
+const data = mongoose.model("data", pokemon)
+
+module.exports = Data
